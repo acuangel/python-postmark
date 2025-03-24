@@ -1,7 +1,9 @@
 from setuptools import setup
 
-# Static version instead of importing
-__version__ = "0.6.0" 
+# Read version without importing
+version = {}
+with open(os.path.join('postmark', '__init__.py')) as f:
+    exec(f.read(), version)
 
 setup(
     name="python-postmark",
