@@ -1,14 +1,11 @@
-from distutils.core import setup
-from distutils.util import convert_path
+from setuptools import setup
 
-postmark = {}
-ver_path = convert_path('postmark/__init__.py')
-with open(ver_path) as ver_file:
-    exec(ver_file.read(), postmark)
+# Static version instead of importing
+__version__ = "0.6.0" 
 
 setup(
     name="python-postmark",
-    version=postmark['__version__'],
+    version=__version__,  # Use static version
     packages=['postmark'],
     author="Dave Martorana (http://davemartorana.com), Richard Cooper (http://frozenskys.com), Bill Jones (oraclebill), Dmitry Golomidov (deeGraYve)",
     author_email="themartorana@gmail.com",
